@@ -9,6 +9,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\DB;
 use Exception; 
+use Intervention\Image\Facades\Image;
 
 class DataBase extends Controller
 {
@@ -94,6 +95,50 @@ class DataBase extends Controller
         $sliders = Product::all();
         return view('welcome')->with('sliders', $sliders)->with('email', $email)->with('status', $this->status);
     }
+
+    function about($email){
+        $this->checkStatus($email);
+        return view('about')->with('email', $email)->with('status', $this->status);
+    }
+
+    function custom($email){
+        $this->checkStatus($email);
+        return view('customgifts')->with('email', $email)->with('status', $this->status);
+    }
+
+    function customcup($email){
+        $this->checkStatus($email);
+        return view('customcup')->with('email', $email)->with('status', $this->status);
+    }
+
+    function customizecup(Request $request, $email){
+        $this->checkStatus($email);
+        $selectedCupImage = $request->input('cup_image');
+        $inputText = $request->input('input_text');
+        $cupImagePath = 'imgs/' . $selectedCupImage;
+
+        $cupImage = Image::make($cupImagePath);
+
+        $imageWidth = $cupImage->width();
+        $imageHeight = $cupImage->height();
+        $textWidth = strlen($inputText) * 10; 
+        $textHeight = 24; 
+
+        $x = ($imageWidth - $textWidth) / 2 - $textWidth ;
+        $y = ($imageHeight - $textHeight) / 2 + $textHeight;
+
+        $cupImage->text($inputText, $x, $y, function($font) {
+            $font->file('C:\Windows\Fonts\Arial.ttf');
+            $font->size(30);
+            $font->color('#ffffff');
+        });
+
+        $customizedCupImagePath = 'imgs/' . $inputText.'png';
+        $cupImage->save($customizedCupImagePath);
+
+        return view('customcupview')->with('email', $email)->with('status', $this->status)->with('customizedCupImage', $customizedCupImagePath);
+    }
+
     function showproduct($email, $flowername){
         $this->checkStatus($email);
         $sliders = DB::select("select * from `products` where `name` = '".$flowername."'");

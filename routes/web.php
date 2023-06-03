@@ -15,6 +15,9 @@ use App\Http\Controllers\DataBase;
 */
 
 Route::get('user/{email}', [DataBase::class, 'carousel']);
+Route::get('/about/{email}', [DataBase::class, 'about']);
+Route::get('/custom/{email}', [DataBase::class, 'custom']);
+Route::get('{email}/custom/cup', [DataBase::class, 'customcup']);
 Route::view('/', 'login');
 Route::get('shop/{email}', [DataBase::class, 'showshop']);
 Route::view('signup', 'signup');
@@ -33,3 +36,4 @@ Route::get('list', [DataBase::class, 'showlist']);
 Route::get('update/{name}', [DataBase::class, 'showupdatepage']);
 Route::get('delete/{name}', [DataBase::class, 'deleteproduct']);
 Route::get('updateproduct/{name}', [DataBase::class, 'updateproduct']);
+Route::get('/customizecup/{email}/cup', [DataBase::class, 'customizecup']);

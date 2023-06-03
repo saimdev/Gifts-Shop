@@ -47,9 +47,6 @@
                   </form>
                   
             </div>
-            <!-- <div class="col col-5">
-                <img src="{{asset('/imgs/login.jpg')}}" style="width: 22rem" alt="">
-            </div> -->
         </div>
     </div>
 </body>

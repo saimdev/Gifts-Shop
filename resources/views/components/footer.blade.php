@@ -2,8 +2,8 @@
     <div class="row p-5 text-white" style="
                 backdrop-filter: blur(100px) saturate(100%); border-radius:0.5rem;">
         <div class="col col-3 d-flex flex-column">
-            <h2>Flowers Shop</h2>
-            <p class="w-100">&copy; 2022 - Flowers Shop, All Rights Reserved</p>
+            <h2>Gifts Store</h2>
+            <p class="w-100">&copy; 2023 - Gifts Store, All Rights Reserved</p>
         </div>
         <div class="links col col-2 d-flex flex-column align-items-start">
             <h5>Site map</h5>

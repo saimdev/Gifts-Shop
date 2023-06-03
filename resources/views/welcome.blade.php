@@ -12,14 +12,14 @@
 </head>
 <body class="welcome text-white">
     <div class="container-fluid py-3 px-5">
-        <div class="d-flex justify-content-between align-items-center">
+    <div class="d-flex justify-content-between align-items-center">
             <div>
                 <a href="/user/{{$email}}"><h4 class="h4">Gifts Store</h4></a>
             </div>
             <div class="d-flex justify-content-around align-items-center">
-                <a href="" class="mx-3">About Us</a>
-                <a href="" class="mx-3">Blog</a>
-                <a href="/shop/{{$email}}" class="mx-3">Shop</a>
+                <a href="/about/{{$email}}" class="mx-3">About Us</a>
+                <a href="/shop/{{$email}}" class="mx-3">Gifts</a>
+                <a href="/custom/{{$email}}" class="mx-3">Custom Gifts</a>
                 <a href="/cart/{{$email}}" class="mx-3">Cart</a>
                 @if ($status==1)
                     <a href="/logout/{{$email}}" class="mx-3">Logout</a>
@@ -33,14 +33,14 @@
                 <h1 style="font-family: 'Poiret One', cursive !important;" class="fw-bold">Gifts For Your Relatives</h1>
             </div>
         </div>
-        <div class="row mb-4">
+        <!-- <div class="row mb-4">
             <div class="col col-12 d-flex justify-content-center">
                 <div class="card" style="width: 18rem; border:none !important;"><img src="{{asset('/imgs/gift1.jpg')}}" class="card-img-top" style="background: #FEE46C; height:14rem" alt="..."></div>
                 <div class="card" style="width: 18rem; border:none !important;"><img src="{{asset('/imgs/gift2.jpg')}}" class="card-img-top" style="height:14rem" alt="..."></div>
                 <div class="card" style="width: 18rem; border:none !important;"><img src="{{asset('/imgs/gift3.jpg')}}" class="card-img-top" style="height:14rem" alt="..."></div>
                 <div class="card" style="width: 18rem; border:none !important;"><img src="{{asset('/imgs/gift4.jpg')}}" class="card-img-top" style="height:14rem" alt="..."></div>
             </div>
-        </div>
+        </div> -->
         <div class="row">
             <div class="col col-12 text-center d-flex justify-content-center align-items-center">
                 <div style="border-top:1px solid black; margin-top: 1rem" class="px-3"></div>
@@ -81,24 +81,40 @@
             </div>
         </div>
         <div class="row" style="margin-top: 10rem;">
-            <div class="col col-12 d-flex px-5">
-                <img src="{{asset('imgs/reading.jpg')}}" style="border-radius: 0.3rem; width:28rem !important; z-index:360;" alt="">
-                <div style="width:223px; border: 1px solid #3c6450; padding:9.3rem 223px; margin-top:-18.7rem; border-radius: 0.3rem;z-index:0; transform: rotate(-6deg);"></div>
-                <p class="my-1 mt-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero rerum nostrum aperiam laborum dolorum alias consequatur consequuntur recusandae aliquid laboriosam.</p>
-                <p class="my-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia nemo ad dicta culpa dolores repudiandae.</p>
-                <a href="/shop/{{$email}}" class="fs-6 fw-bold mt-2" style="color: #3c6450">Next <img src="{{asset('imgs/logos/angle-right.svg')}}" style="background:#75887f;padding: 0.5rem;width:2rem; border-radius:100px;" alt=""></a>
-            </div>
-            <div class="col col-12 d-flex px-5">
-                <img src="{{asset('imgs/potts.jpg')}}" style="border-radius: 0.3rem;width:20rem; z-index:360;" alt="">
-                <div style="width:223px; border: 1px solid #3c6450; padding:2rem 159px; margin-left:-20rem; border-radius: 0.3rem;z-index:0; transform: rotate(-8deg)"></div>
-                <div class="d-flex flex-column" style="margin-left: 2rem; margin-top:100px;">
-                    <h4 class="mt-5">Make A Gift That Grows</h4>
-                    <p class="my-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia nemo ad dicta culpa dolores repudiandae.</p>
-                    <a href="/shop/{{$email}}" class="fs-6 fw-bold mt-2" style="color: #3c6450">Shop Now <img src="{{asset('imgs/logos/angle-right.svg')}}" style="background:#75887f;padding: 0.5rem;width:2rem; border-radius:100px;" alt=""></a>
+            <div class="col col-12 d-flex px-5 my-5">
+                <img src="{{asset('/imgs/gift1.jpg')}}" style="border-radius: 0.3rem; width:28rem !important; z-index:360;" alt="">
+                <div class="d-flex flex-column justify-content-center px-5">
+                <p class="my-1 mt-5">Experience the pleasure of writing with our premium selection of pens. Designed to provide a smooth and effortless writing experience, our pens combine style, comfort, and precision. </p>
+                <p class="my-1">Elevate your writing experience and make a statement with our exceptional range of pens, ensuring that your words are conveyed with elegance and finesse.</p>
+                <a href="/shop/{{$email}}" class="fs-6 fw-bold mt-2" style="color: #fff77d">Buy Pen <img src="{{asset('imgs/logos/angle-right.svg')}}" style="background:#fff77d;padding: 0.5rem;width:2rem; border-radius:100px;" alt=""></a>
                 </div>
             </div>
+            <div class="col col-12 d-flex px-5 my-5">
+                <div class="d-flex flex-column justify-content-center px-5">
+                    <p class="my-1 mt-5">Say it with flowers and express your heartfelt emotions with our stunning bouquets. Handcrafted by expert florists, our bouquets are a blend of beauty and artistry.  </p>
+                    <p class="my-1">From classic roses to exotic orchids, our diverse collection offers an array of colors and scents to suit every taste. </p>
+                    <a href="/shop/{{$email}}" class="fs-6 fw-bold mt-2" style="color: #fff77d">Buy Bouqet <img src="{{asset('imgs/logos/angle-right.svg')}}" style="background:#fff77d;padding: 0.5rem;width:2rem; border-radius:100px;" alt=""></a>
+                </div>
+                <img src="{{asset('/imgs/gift2.jpg')}}" style="border-radius: 0.3rem; width:28rem !important; z-index:360;" alt="">
+            </div>
+            <div class="col col-12 d-flex px-5 my-5">
+            <img src="{{asset('/imgs/gift3.jpg')}}" style="border-radius: 0.3rem; width:28rem !important; height:26rem !important; z-index:360;" alt="">
+                <div class="d-flex flex-column justify-content-center px-5">
+                    <p class="my-1 mt-5">Immerse yourself in captivating stories and unlock new worlds with our thoughtfully curated collection of books and diaries. From gripping thrillers to heartwarming romances, our selection caters to all literary tastes.</p>
+                    <p class="my-1">Each book and diary is carefully chosen to provide you with inspiration, entertainment, and a chance to explore the depths of imagination.</p>
+                    <a href="/shop/{{$email}}" class="fs-6 fw-bold mt-2" style="color: #fff77d">Buy Books <img src="{{asset('imgs/logos/angle-right.svg')}}" style="background:#fff77d;padding: 0.5rem;width:2rem; border-radius:100px;" alt=""></a>
+                </div>
+            </div>
+            <div class="col col-12 d-flex px-5 my-5">
+                <div class="d-flex flex-column justify-content-center px-5">
+                    <p class="my-1 mt-5">Indulge in your favorite hot beverages with our exquisite collection of cups. Crafted with care and precision, our cups are designed to enhance your drinking experience.</p>
+                    <p class="my-1">Choose from a variety of styles, colors, and sizes to find the cup that suits your taste and mood. Elevate your morning routine or add a touch of sophistication to your afternoon tea break with our exceptional cup collection.</p>
+                    <a href="/shop/{{$email}}" class="fs-6 fw-bold mt-2" style="color: #fff77d">Buy Cup <img src="{{asset('imgs/logos/angle-right.svg')}}" style="background:#fff77d;padding: 0.5rem;width:2rem; border-radius:100px;" alt=""></a>
+                </div>
+                <img src="{{asset('/imgs/gift4.jpg')}}" style="border-radius: 0.3rem; width:28rem !important; height:26rem !important; z-index:360;" alt="">
+            </div>
         </div>
-        <div class="row" style="margin-top: 8rem;">
+        <div class="row" style="margin-top: 6rem;">
             <h2 class="fw-light text-center" style="font-family: 'Poiret One', cursive !important;">Instagram Feed</h2>
             <div class="col col-12 d-flex justify-content-center align-items-center" style="margin-top: 2rem;">
                 <img src="{{asset('imgs/insta2.jpg')}}" class="mx-3" style="width: 20rem; height:13.3rem !important; border-radius:0.5rem;" alt="">

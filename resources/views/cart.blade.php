@@ -12,14 +12,14 @@
 </head>
 <body>
     <div class="container-fluid py-3 px-5">
-        <div class="d-flex justify-content-between align-items-center">
+    <div class="d-flex justify-content-between align-items-center">
             <div>
-                <a href="/user/{{$email}}"><h4 class="h4">Flowers Store</h4></a>
+                <a href="/user/{{$email}}"><h4 class="h4">Gifts Store</h4></a>
             </div>
             <div class="d-flex justify-content-around align-items-center">
-                <a href="" class="mx-3">About Us</a>
-                <a href="" class="mx-3">Blog</a>
-                <a href="/shop/{{$email}}" class="mx-3">Shop</a>
+                <a href="/about/{{$email}}" class="mx-3">About Us</a>
+                <a href="/shop/{{$email}}" class="mx-3">Gifts</a>
+                <a href="/custom/{{$email}}" class="mx-3">Custom Gifts</a>
                 <a href="/cart/{{$email}}" class="mx-3">Cart</a>
                 <a href="/logout/{{$email}}" class="mx-3">Logout</a>
             </div>

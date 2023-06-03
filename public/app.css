@@ -10,18 +10,18 @@
   
   /* Track */
   ::-webkit-scrollbar-track {
-    background: transparent;
+    background:none;
   }
   
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: #3c6450;
+    background: #fff77d;
     border-radius: 3rem;
   }
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: #3c6450;
+    background: #fff77d;
   }
 
 body{
@@ -37,7 +37,7 @@ a{
 }
 
 a:hover{
-    color: #3c6450;
+    color: #fff77d;
 }
 
 .links>a:hover{
