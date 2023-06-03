@@ -220,8 +220,14 @@ class DataBase extends Controller
                 DB::update("UPDATE `".$username."_orders` SET `qty`= ".$qty." WHERE `name` = '".$name."'");
             }
             else{
-                DB::insert("INSERT INTO `".$username."_orders`(`id`, `name`, `price`, `qty` , `image1`) VALUES (NULL,'".$name."','".$price."','".$req->qty."', 'imgs/flowers/".$image."')");    
+                DB::insert("INSERT INTO `".$username."_orders`(`id`, `name`, `price`, `qty` , `image1`) VALUES (NULL,'".$name."','".$price."','".$req->qty."', 'imgs/flowers/".$image."')");
             }
+            $originalQty = DB::select("select * from `products` where `name` = '".$name."'");
+            foreach($originalQty as $item){
+                $origQty=$item->qty;
+            }
+            $newQty = $origQty-$qty;
+            DB::update("UPDATE `products` SET `qty`= ".$newQty." WHERE `name` = '".$name."'");
             return redirect()->back()->with('success', 'Successfully Added to Cart');
         }
     }
