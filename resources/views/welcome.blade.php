@@ -60,7 +60,7 @@
                         @foreach($sliders as $slider)
                             <div class="carousel-item @if($loop->first) active @endif">
                                 <div class="slider-image text-center">
-                                    <img src="{{  asset($slider->image1) }}" style="width: 18rem"  class="d-inline-block border text-center rounded" alt="{{ $slider->image1 }}">
+                                    <img src="{{  asset($slider->image1) }}" style="width: 18rem"  class="d-inline-block text-center" alt="{{ $slider->image1 }}">
                                     <div class="mt-2 py-1">
                                         <p class="fw-bold" style="margin-block-start: 0 !important; margin-block-end:0 !important;">{{$slider->name}}</p>
                                         <p style="margin: 0 !important;">{{$slider->description}}</p>

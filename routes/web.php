@@ -36,4 +36,4 @@ Route::get('list', [DataBase::class, 'showlist']);
 Route::get('update/{name}', [DataBase::class, 'showupdatepage']);
 Route::get('delete/{name}', [DataBase::class, 'deleteproduct']);
 Route::get('updateproduct/{name}', [DataBase::class, 'updateproduct']);
-Route::get('/customizecup/{email}/cup', [DataBase::class, 'customizecup']);
+Route::get('/customizecup/{email}/cup/20/{imagename}/{cupname}/', [DataBase::class, 'customizecup']);

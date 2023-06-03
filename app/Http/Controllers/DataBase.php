@@ -111,9 +111,9 @@ class DataBase extends Controller
         return view('customcup')->with('email', $email)->with('status', $this->status);
     }
 
-    function customizecup(Request $request, $email){
+    function customizecup(Request $request, $email, $imagename, $cupname){
         $this->checkStatus($email);
-        $selectedCupImage = $request->input('cup_image');
+        $selectedCupImage = $imagename;
         $inputText = $request->input('input_text');
         $cupImagePath = 'imgs/' . $selectedCupImage;
 
@@ -136,7 +136,7 @@ class DataBase extends Controller
         $customizedCupImagePath = 'imgs/' . $inputText.'png';
         $cupImage->save($customizedCupImagePath);
 
-        return view('customcupview')->with('email', $email)->with('status', $this->status)->with('customizedCupImage', $customizedCupImagePath);
+        return view('customcupview')->with('email', $email)->with('status', $this->status)->with('customizedCupImage', $customizedCupImagePath)->with('imagename', $imagename)->with('cupname', $cupname);
     }
 
     function showproduct($email, $flowername){

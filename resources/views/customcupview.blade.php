@@ -28,7 +28,15 @@
                 @endif
             </div>
         </div>
-        <img src="{{ asset($customizedCupImage) }}" alt="Customized Cup Image">
+        <div class="row d-flex justify-content-center">
+            <form action="/{{$email}}/addtocart/{{$cupname}}/20/{{$imagename}}" method="post" class="col p-5 col-6 d-flex flex-column justify-content-center align-items-center" style="
+            backdrop-filter: blur(15px) saturate(100%); border-radius:0.5rem;">
+            @csrf
+                <img src="{{ asset($customizedCupImage) }}" class="img-fluid w-50" alt="Customized Cup Image">
+                <input type="number" name="qty" id="" class="my-3 w-25" placeholder="Quantity" required>
+                <button class="mt-3 w-100 btn text-white" type="submit" style="background: #1a134d !important;">Add to Cart</button>
+            </form>
+        </div>
         @component('components.footer')
         @endcomponent
     </div>

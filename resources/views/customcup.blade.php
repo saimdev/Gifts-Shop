@@ -31,7 +31,7 @@
         <div class="row my-5 d-flex justify-content-center align-items-center" >
             <div class="col col-10 py-4 d-flex justify-content-center align-items-center text-white" style="
                 backdrop-filter: blur(15px) saturate(100%); border-radius:0.5rem;">
-                <form class="w-75" method="GET" action="/customizecup/{{$email}}/cup">
+                <form class="w-75" method="GET" action="/customizecup/{{$email}}/cup/20/" id="customCupForm">
                     <h1 class="fw-light">Custom Cup</h1>
                     <div class="form-outline mb-4 mt-3">
                       <input type="text" name="input_text" placeholder="Enter Text" id="form1Example1" class="form-control" maxlength="10"  required/>
@@ -42,25 +42,25 @@
                 <div class="row">
                     <div class="col-6">
                         <label>
-                            <input type="radio" name="cup_image" value="cup1.png" required>
+                            <input type="radio" name="Black Cup" value="cup1.png" >
                             <img src="{{asset('/imgs/cup1.png')}}" alt="Cup 1" class="img-fluid w-50">
                         </label>
                     </div>
                     <div class="col-6">
                         <label>
-                            <input type="radio" name="cup_image" value="cup2.png" required>
+                            <input type="radio" name="Brown Cup" value="cup2.png" >
                             <img src="{{asset('/imgs/cup2.png')}}" alt="Cup 2" class="img-fluid w-50">
                         </label>
                     </div>
                     <div class="col-6 mt-3">
                         <label>
-                            <input type="radio" name="cup_image" value="cup3.png" required>
+                            <input type="radio" name="Red Cup" value="cup3.png" >
                             <img src="{{asset('/imgs/cup3.png')}}" alt="Cup 2" class="img-fluid w-50">
                         </label>
                     </div>
                     <div class="col-6">
                         <label>
-                            <input type="radio" name="cup_image" value="cup4.png" required>
+                            <input type="radio" name="Blue Cup" value="cup4.png" >
                             <img src="{{asset('/imgs/cup4.png')}}" alt="Cup 2" class="img-fluid w-50">
                         </label>
                     </div>
@@ -79,4 +79,20 @@
         @endcomponent
     </div>
 </body>
+<script>
+
+var form = document.getElementById('customCupForm');
+
+// Add event listener for form submission
+form.addEventListener('submit', function(e) {
+  // Get the selected cup image value
+  var imagename = document.querySelector('input:checked').value;
+  var cupname = document.querySelector('input:checked').name;
+  // Get the input text value
+  var inputText = document.getElementById('form1Example1').value;
+
+  // Modify the action attribute with the selected cup image and input text
+  form.action = "/customizecup/{{$email}}/cup/20/" + imagename + "/" + cupname + "/";
+});
+</script>
 </html>
