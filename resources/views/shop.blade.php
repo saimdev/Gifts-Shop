@@ -39,8 +39,8 @@
             </div>
         </div>
         <div class="row my-5">
-            <h1 class="fw-light text-center" style="font-family: 'Poiret One', cursive;">Our Products</h1>
-            <div class="col col-12 d-flex justify-content-around flex-wrap">
+            <h1 class="fw-light text-center mt-5" style="font-family: 'Poiret One', cursive;">Our Products</h1>
+            <div class="col col-12 d-flex justify-content-around flex-wrap mt-4">
                 @foreach ($collection as $item)
                     <a href="/{{$email}}/product/{{$item->name}}">
                         <div class="products my-3 mx-2">

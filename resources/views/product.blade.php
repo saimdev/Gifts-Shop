@@ -12,16 +12,16 @@
         <title>Buy {{$slider->name}}</title>
     @endforeach
 </head>
-<body>
+<body class="productpage text-white">
     <div class="container-fluid py-3 px-5">
         <div class="d-flex justify-content-between align-items-center">
             <div>
-                <a href="/user/{{$email}}"><h4 class="h4">Flowers Store</h4></a>
+                <a href="/user/{{$email}}"><h4 class="h4">Gifts Store</h4></a>
             </div>
             <div class="d-flex justify-content-around align-items-center">
-                <a href="" class="mx-3">About Us</a>
-                <a href="" class="mx-3">Blog</a>
-                <a href="/shop/{{$email}}" class="mx-3">Shop</a>
+                <a href="/about/{{$email}}" class="mx-3">About Us</a>
+                <a href="/shop/{{$email}}" class="mx-3">Gifts</a>
+                <a href="/custom/{{$email}}" class="mx-3">Custom Gifts</a>
                 <a href="/cart/{{$email}}" class="mx-3">Cart</a>
                 @if ($status==1)
                     <a href="/logout/{{$email}}" class="mx-3">Logout</a>
@@ -37,7 +37,7 @@
                         @foreach($sliders as $slider)
                             <div class="carousel-item @if($loop->first) active @endif">
                                 <div class="slider-image text-center">
-                                    <img src="{{  asset($slider->image1) }}" style="width: 100%; height:400px;"  class="d-inline-block border text-center rounded" alt="{{ $slider->image1 }}">
+                                    <img src="{{  asset($slider->image1) }}" style="width: 100%; height:400px;"  class="d-inline-block text-center" alt="{{ $slider->image1 }}">
                                 </div>
                             </div>
                         @endforeach
@@ -93,7 +93,7 @@
                     @foreach($second as $slides)
                         <div class="carousel-item @if($loop->first) active @endif">
                             <div class="slider-image text-center">
-                                <img src="{{  asset($slides->image1) }}" style="width: 18rem"  class="d-inline-block border text-center rounded" alt="{{ $slides->image1 }}">
+                                <img src="{{  asset($slides->image1) }}" style="width: 18rem"  class="d-inline-block text-center" alt="{{ $slides->image1 }}">
                                 <div class="mt-2 py-1">
                                     <p class="fw-bold" style="margin-block-start: 0 !important; margin-block-end:0 !important;">{{$slides->name}}</p>
                                     <p style="margin: 0 !important;">{{$slides->description}}</p>

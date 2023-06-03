@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
     <title>Cart | Flowers Shop</title>
 </head>
-<body>
+<body class="text-white cart">
     <div class="container-fluid py-3 px-5">
     <div class="d-flex justify-content-between align-items-center">
             <div>
@@ -63,21 +63,21 @@
                         <p>{{$total}} $</p>
                     </div>
                     <div class="d-flex">
-                        <p class="fw-bold mx-2">Vat (20$):</p>
-                        <p>21.67 $</p>
+                        <p class="fw-bold mx-2">Delivery Charges:</p>
+                        <p>5 $</p>
                     </div>
                 </div>
                 <div class="p-3 my-3" style="border: 1px solid lightgray">
-                    <input type="text" name="" placeholder="Promo Code" id="" style="outline: none; border:none;">
+                    <input type="text" name="" placeholder="Promo Code" id="" style="outline: none; border:none; background:none" disabled>
                 </div>
                 <div class="p-3 my-3" style="border: 1px solid lightgray">
                     <div class="d-flex">
                         <p class="fw-bold mx-2" style="margin-block-start: 0; margin-block-end:0;">Total:</p>
-                        <p class="fw-bold" style="margin-block-start: 0; margin-block-end:0;">{{$total + 20}} $</p>
+                        <p class="fw-bold" style="margin-block-start: 0; margin-block-end:0;">{{$total +5}} $</p>
                     </div>
                 </div>
                 @if (count($orders)!=0)
-                    <a href="/checkout/{{$email}}/{{$total+20}}"><button type="submit" class="btn btn-success w-100" style="background: #3c6450">Checkout</button></a>    
+                    <a href="/checkout/{{$email}}/{{$total+20}}"><button type="submit" class="btn fw-bold w-100" style="background: #fff77d; color:#1a134d">Checkout</button></a>    
                 @endif
             </div>
         </div>

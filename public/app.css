@@ -91,7 +91,7 @@ a:hover{
   background-size:cover;
 }
 
-.welcome, .shop{
+.welcome, .shop, .cart, .productpage{
   background-image: url('/imgs/3.jpg');
   background-attachment: fixed;
   background-size:cover;

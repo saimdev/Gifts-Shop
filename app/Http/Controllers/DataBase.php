@@ -111,6 +111,11 @@ class DataBase extends Controller
         return view('customcup')->with('email', $email)->with('status', $this->status);
     }
 
+    function customdiary($email){
+        $this->checkStatus($email);
+        return view('customdiary')->with('email', $email)->with('status', $this->status);
+    }
+
     function customizecup(Request $request, $email, $imagename, $cupname){
         $this->checkStatus($email);
         $selectedCupImage = $imagename;
@@ -137,6 +142,34 @@ class DataBase extends Controller
         $cupImage->save($customizedCupImagePath);
 
         return view('customcupview')->with('email', $email)->with('status', $this->status)->with('customizedCupImage', $customizedCupImagePath)->with('imagename', $imagename)->with('cupname', $cupname);
+    }
+
+    function customizediary(Request $request, $email, $imagename, $diaryname){
+        $this->checkStatus($email);
+        $selectedDiaryImage = $imagename;
+        $inputText = $request->input('input_text');
+        $diaryImagePath = 'imgs/' . $selectedDiaryImage;
+
+        $diaryImage = Image::make($diaryImagePath);
+
+        $imageWidth = $diaryImage->width();
+        $imageHeight = $diaryImage->height();
+        $textWidth = strlen($inputText) * 10; 
+        $textHeight = 24; 
+
+        $x = ($imageWidth - $textWidth) / 2 -10 ;
+        $y = ($imageHeight - $textHeight) / 2 + $textHeight;
+
+        $diaryImage->text($inputText, $x, $y, function($font) {
+            $font->file('C:\Windows\Fonts\Arial.ttf');
+            $font->size(30);
+            $font->color('#ffffff');
+        });
+
+        $customizedDiaryImagePath = 'imgs/' . $inputText.'png';
+        $diaryImage->save($customizedDiaryImagePath);
+
+        return view('customdiaryview')->with('email', $email)->with('status', $this->status)->with('customizedDiaryImage', $customizedDiaryImagePath)->with('imagename', $imagename)->with('diaryname', $diaryname);
     }
 
     function showproduct($email, $flowername){
